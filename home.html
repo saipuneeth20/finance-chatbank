@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MyBank</title>
+        <link rel="stylesheet" href="styles/home.css">
+        <link rel="stylesheet" href="styles/header.css">
+        <link rel="stylesheet" href="styles/banksidebar.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/main-area.css">
+        <link rel="stylesheet" href="styles/dashboard.css">
+        <link rel="stylesheet" href="styles/bar-graph.css">
+        <link rel="stylesheet" href="styles/chatbot.css">
+        <link rel="stylesheet" href="styles/main-area.css">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+<header>
+    <div class="header">
+        <div class="left-section">
+            <img src="icons/bank-svgrepo-com.svg" alt="bank-logo" class="logo">
+            <div class="name"><p>MyBank</p></div>
+        </div>
+        <div class="middle-section">
+            <div class="navbar">
+                <nav>
+                    <ul class="nav-links">
+                        <li class="dropdown">
+                            <a href="#">Accounts ▼</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Savings Account</a></li>
+                                <li><a href="#">Current Account</a></li>
+                                <li><a href="#">Salary Account</a></li>
+                                <li><a href="#">Fixed Deposit</a></li>
+                                <li><a href="#">Recurring Deposit</a></li>
+                                <li><a href="#">NRI Account</a></li>
+                            </ul>
+                        </li>
+            
+                        <li class="dropdown">
+                            <a href="#">Loans ▼</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Home Loan</a></li>
+                                <li><a href="#">Personal Loan</a></li>
+                                <li><a href="#">Education Loan</a></li>
+                                <li><a href="#">Business Loan</a></li>
+                                <li><a href="#">Gold Loan</a></li>
+                            </ul>
+                        </li>
+            
+                        <li class="dropdown">
+                            <a href="#">Investments ▼</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Mutual Funds</a></li>
+                                <li><a href="#">Fixed Deposits</a></li>
+                                <li><a href="#">Stocks</a></li>
+                                <li><a href="#">Retirement Plans</a></li>
+                            </ul>
+                        </li>
+            
+                        <li class="dropdown">
+                            <a href="#">Contact Us ▼</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Branch Locator</a></li>
+                                <li><a href="#">Customer Support</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">FAQ</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+  <!-- other nav elements -->
+<div class="header-user-controls">
+    <div id="userDisplay" class="user-display"> 
+    </div>
+    <button id="logoutBtn">Logout
+        <script>
+            document.getElementById("logoutBtn").addEventListener("click", () => {
+            localStorage.removeItem("user");
+            window.location.href = "login.html";
+            });
+        </script>
+    </button>
+</div>
+</div>
+</header>
+<nav>
+    <div class="sidebar">
+        <div class="sidebar-link">
+            <div>Dashboard</div>
+        </div>
+        <div class="sidebar-link">
+            <div>Accounts</div>
+        </div>
+        <div class="sidebar-link">
+            <div>Transactions</div>
+        </div>
+        <div class="sidebar-link">
+            <div>Loans</div>
+        </div>
+        <div class="sidebar-link">
+            <div>Cards</div>
+        </div>
+        <div class="sidebar-link">
+            <div>Services</div>
+        </div>
+        <div class="sidebar-link">
+            <div>Settings</div>
+        </div>
+    </div>
+</nav>
+<main class="main-content-wrapper">
+  <div class="main-content">
+
+    <!-- TOP SECTION: Profile + Transaction History -->
+    <div class="top-tile">
+  <div class="profile-section">
+    <div class="profile"><img src="icons/profile-user-svgrepo-com.svg" alt="" class="profile-icon"></div>
+    <div class="profile-info">
+      <h2>Username1</h2>
+      <p>Account Balance :₹50000</p>
+      <p>Account Number: **** **** 6936</p>
+      <p>Account Type: Savings</p>
+    </div>
+  </div>
+  <div class="transaction-history">
+    <h3>Transaction History</h3>
+    <ul>
+      <li>₹1,200 credited from JohnDoe (ID: **1234)</li>
+      <li>₹500 debited to ElectricBill (ID: **9876)</li>
+      <li>₹2,000 credited from Amazon (ID: **5678)</li>
+      <li>₹750 debited to Groceries (ID: **3456)</li>
+      <li>₹1,000 credited from Paytm (ID: **9999)</li>
+    </ul>
+  </div>
+</div>
+
+
+    <!-- BOTTOM SECTION: Bar Graph + New Transaction -->
+    <section class="bottom-section">
+      <!-- Bar Graph -->
+      <div class="chart-section" id="bar-chart-section">
+        <h2 style="text-align: center; margin-bottom: 16px;">Monthly Expenses vs Income</h2>
+        <div class="chart-wrapper">
+          <div class="y-axis">
+            <div class="y-label">₹1500</div>
+            <div class="y-label">₹1200</div>
+            <div class="y-label">₹900</div>
+            <div class="y-label">₹600</div>
+            <div class="y-label">₹300</div>
+            <div class="y-label">₹0</div>
+          </div>
+
+          <!-- Grid Lines -->
+          <div class="grid-line" style="top:0;"></div>
+          <div class="grid-line" style="top:64px;"></div>
+          <div class="grid-line" style="top:128px;"></div>
+          <div class="grid-line" style="top:192px;"></div>
+          <div class="grid-line" style="top:256px;"></div>
+
+          <!-- Bar Chart -->
+          <div class="bar-chart-container" id="barChartContainer"></div>
+
+          <!-- X Axis Labels -->
+          <div class="x-axis-labels" id="xLabels"></div>
+        </div>
+      </div>
+
+      <!-- New Transaction Form -->
+      <div class="new-transaction-section">
+        <h2>Initiate New Transaction</h2>
+        <form>
+          <label for="username">Recipient Username</label>
+          <input type="text" id="username" placeholder="Enter username" required>
+
+          <label for="acc-number">Account Number</label>
+          <input type="text" id="acc-number" placeholder="Enter account number" required>
+
+          <label for="amount">Amount (₹)</label>
+          <input type="number" id="amount" placeholder="Enter amount" required>
+
+          <button type="submit">Proceed</button>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>
+<!-- Chatbot and Notification Icons -->
+ <!-- Chatbot Button -->
+<div class="chatbot-button" onclick="toggleChatbot()">
+  <img src="icons/bot-svgrepo-com.svg" alt="Chatbot" />
+</div>
+
+<!-- Chatbot Popup -->
+<div class="chatbot-popup" id="chatbotPopup">
+  <h3>Chat with MyBank AI</h3>
+  <div class="chatbot-messages" id="chatMessages"></div>
+  <div class="chatbot-input-area">
+    <input type="text" id="chatInput" placeholder="Ask a question..." />
+    <button id="sendBtn">Send</button>
+  </div>
+</div>
+
+<script>
+  function toggleChatbot() {
+    document.getElementById("chatbotPopup").classList.toggle("open");
+  }
+</script>
+
+<!-- Load chatbot JS (at end of body!) -->
+<script src="scripts/chatbot.js"></script>
+
+<script src="scripts/bargraph.js" src="scripts/home.js" src="scripts/chatbot.js">
+
+    //other javascript code
+</script>
+    </body>
+</html>

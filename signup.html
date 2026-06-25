@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank Signup</title>
+  <link rel="stylesheet" href="styles/signup.css"/>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo-container">
+      <img src="icons/bank-svgrepo-com.svg" alt="bank-logo" class="logo"/>
+      <h1 class="login-title">MyBank Signup</h1>
+    </div>
+
+<form class="login-form" onsubmit="return handleSubmit(event)">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required/>
+      </div>
+      <div class="form-group">
+        <label for="password">ReEnter-Password</label>
+        <input type="password" id="re-password" required/>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required/>
+      </div>
+
+      <div class="form-group checkbox">
+        <input type="checkbox" id="agree" />
+        <label for="agree">I agree to the terms and conditions</label>
+      </div>
+      <button type="submit" class="signup-btn">Sign Up</button>
+      <p class="login-link">
+        Already have an account? <a href="login.html">Login</a>
+    </form>
+  </div>
+<script src="scripts/signup.js"></script>
+
+</body>
+</html>

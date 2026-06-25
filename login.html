@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank Login</title>
+  <link rel="stylesheet" href="styles/login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo-container">
+      <img src="icons/bank-svgrepo-com.svg" alt="bank-logo" class="logo" />
+      <h1 class="login-title">MyBank Login</h1>
+    </div>
+    
+    <!-- ✅ Changed: added onsubmit handler -->
+    <form onsubmit="handleLogin(event)" class="login-form">
+      <div class="form-group">
+        <label for="username">Email</label>
+        <input type="email" id="username" name="username" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <div class="forgot-password">
+      <a href="#">Forgot Password?</a>
+    </div>
+
+    <div class="signup-link">
+      <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+  </div>
+
+  <!-- ✅ Added login logic -->
+  <script src="scripts/login.js"></script>
+</body>
+</html>
